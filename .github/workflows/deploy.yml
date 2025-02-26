@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
     
         steps:
-        - name: SSH into the server
+        - name: Try to SSH into VULTR
           uses: appleboy/ssh-action@master
           with:
             host: 155.138.233.237
