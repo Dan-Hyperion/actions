@@ -19,5 +19,8 @@ jobs:
             script: |
                 cd /var/www/actions
                 git pull origin main
+                npm install 
+                npm run build
+                systemctl reload nginx
 
 
