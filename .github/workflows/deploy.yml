@@ -19,6 +19,7 @@ jobs:
             script: |
                 cd /var/www/actions
                 git pull origin main
+                nvm use v22.14.0
                 npm install 
                 npm run build
                 systemctl reload nginx
