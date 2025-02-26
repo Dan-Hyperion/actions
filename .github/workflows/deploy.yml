@@ -19,6 +19,8 @@ jobs:
             script: |
                 cd /var/www/actions
                 git pull origin main
+                export NVM_DIR="$HOME/.nvm"
+                [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
                 nvm use v22.14.0
                 npm install 
                 npm run build
