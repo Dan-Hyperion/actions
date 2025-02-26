@@ -1,0 +1,23 @@
+name: Deploying A React App To Vultr
+
+on:
+    push:
+        branches: [ main ]
+    
+jobs:
+    build:
+        runs-on: ubuntu-latest
+    
+        steps:
+        - name: SSH into the server
+          uses: appleboy/ssh-action@master
+          with:
+            host: 155.138.233.237
+            username: root
+            key: ${{ secrets.SSH_PRIVATE_KEY }}
+            port: 22
+            script: |
+                cd /var/www/actions
+                git pull origin main
+
+
